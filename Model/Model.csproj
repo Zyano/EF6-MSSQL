@@ -21,9 +21,4 @@
 		<PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
 		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
 	</ItemGroup>
-
-
-	<ItemGroup>
-		<ProjectReference Include="..\Common\Common.csproj" />
-	</ItemGroup>
 </Project>

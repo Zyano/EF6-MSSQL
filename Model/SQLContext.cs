@@ -1,7 +1,5 @@
-﻿using System.Configuration;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.SqlServer;
-using Common;
 using Model.EfDbConfiguration;
 using Model.Model;
 
@@ -19,7 +17,8 @@ namespace Model
         private static readonly MicrosoftSqlProviderServices _var = MicrosoftSqlProviderServices.Instance;
 
 #endif
-        private static readonly string DefaultConnectionStringName = "DB_" + ConfigurationManager.AppSettings["ENV"];
+        //private static readonly string DefaultConnectionStringName = "DB_" + ConfigurationManager.AppSettings["ENV"];
+        private static readonly string DefaultConnectionStringName = "DB_LOCAL";
         private static string _connectionStringName;
 
         static SQLContext()
@@ -31,7 +30,7 @@ namespace Model
             : base(_connectionStringName)
         {
             // Increase command timeout in order to allow longer running queries.
-            Database.CommandTimeout = Config.CommandTimeoutSec;
+            //Database.CommandTimeout = Config.CommandTimeoutSec;
             // this.Database.Log += s => Debug.WriteLine(s);
         }
 

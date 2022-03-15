@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.SqlServer.Types;
 
 namespace EF6_MSSQL
 {
@@ -14,6 +15,7 @@ namespace EF6_MSSQL
     {
         static void Main(string[] args)
         {
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             SQLContext context = new SQLContext();
             var insts = context.Institutions.ToList();
             PrintInsts(insts);
@@ -30,6 +32,7 @@ namespace EF6_MSSQL
 
         private static Institution CreateNewInst(string name)
         {
+            SqlGeography
             var latitude = 56.162939;
             var longitude = 10.203921;
             var text = string.Format(CultureInfo.InvariantCulture.NumberFormat, "POINT({0} {1})", longitude, latitude);
